@@ -1,11 +1,11 @@
 @font-face {
     font-family: poppins-regular;
-    src: url('font/poppins/Poppins-Regular.ttf');
+    src: url('/font/poppins/Poppins-Regular.ttf');
 }
 
 @font-face {
     font-family: lora-bold;
-    src: url('font/lora/Lora-Bold.ttf');
+    src: url('/font/lora/Lora-Bold.ttf');
 }
 
 
