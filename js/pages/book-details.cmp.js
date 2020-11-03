@@ -5,8 +5,13 @@ import bookReviews from '../cmps/book/book-reviews.cmp.js';
 
 
 export default {
+    name: 'book-details',
     template: `
         <section v-if="book" class="detailsClass">
+            <section class="nav-btn">
+                <button @click="toPrevBook">Prev</button>
+                <button @click="toNextBook">Next</button>
+            </section>
            <!-- <button @click="$emit('back')">back</button> -->
            <h2>{{book.title}}</h2>
            <h4>{{book.subtitle}}</h4>
@@ -30,10 +35,29 @@ export default {
     data() {
         return {
             book: null,
-            isReviewing: false
+            isReviewing: false,
         }
     },
     methods: {
+        toPrevBook() {
+            const id = this.$route.params.bookId
+            bookService.getConsBookIdById(id, -1)
+                .then(consId => {
+                    this.$router.push(`${consId}`)
+                })
+        },
+        toNextBook() {
+            const id = this.$route.params.bookId
+            bookService.getConsBookIdById(id, 1)
+                .then(consId => {
+                    this.$router.push(`${consId}`)
+                })
+        },
+        loadBook() {
+            const id = this.$route.params.bookId
+            bookService.getById(id)
+                .then(book => this.book = book)
+        },
         toggleReview() {
             this.isReviewing = !this.isReviewing;
         },
@@ -56,9 +80,14 @@ export default {
         }
     },
     created() {
-        const id = this.$route.params.bookId
-        bookService.getById(id)
-            .then(book => this.book = book)
+        this.loadBook();
+    },
+    watch: {
+        // whenever question changes, this function will run
+        '$route.params.bookId' (to, from) {
+            // console.log(`ROUTE CHANGED FROM ${from} TO ${to}`)
+            this.loadBook();
+        }
     },
     components: {
         longText,

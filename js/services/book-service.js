@@ -736,7 +736,7 @@ function add(book) {
     addedBook.listPrice.currencyCode = gCurrencyCode[Math.floor(Math.random() * 2)]
     addedBook.listPrice.isOnSale = (Math.random() >= 0.5)
     gBooks.push(addedBook)
-    utilService.storeToStorage(STORAGE_KEY, books)
+    utilService.storeToStorage(STORAGE_KEY, gBooks)
     return Promise.resolve(addedBook)
 }
 
@@ -746,7 +746,26 @@ export const bookService = {
     saveBookReview,
     removeReview,
     getBooksApi,
-    add
+    add,
+    getConsBookIdById,
+    getIdxById
+}
+
+function getConsBookIdById(id, diff) {
+    var currIdx = getIdxById(id)
+    var consIdx = null
+    if (currIdx === 0 && diff === -1) consIdx = gBooks.length - 1
+    else if (currIdx === gBooks.length - 1 && diff === 1) consIdx = 0
+    else consIdx = currIdx + diff
+    console.log(currIdx);
+    console.log(consIdx);
+    return Promise.resolve(gBooks[consIdx].id)
+}
+
+function getIdxById(bookId) {
+    const idx = gBooks.findIndex(book => book.id === bookId)
+    if (idx === -1) return
+    return idx
 }
 
 function getBooks() {
