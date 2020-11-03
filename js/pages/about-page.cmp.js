@@ -1,10 +1,13 @@
 export default {
+    name: 'about-page',
     template: `
      <section class="about-page">
         <h1>about us...</h1>
-        <p>We have a selection of books on various topics.<br />
-           We support a variety of market-leading publishers as well as special editions of home writers.<br />
-           Wishing you a successful purchase and enjoyable reading!</p>
+        <nav>
+            <router-link to="/about/team">Our Team</router-link> | 
+            <router-link to="/about/services">Our Services</router-link>
+        </nav>
+        <router-view></router-view>
         <img src="./img/homePage.png">
     </section>
     `,
