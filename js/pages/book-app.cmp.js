@@ -1,10 +1,12 @@
 import { bookService } from '../services/book-service.js'
 import bookFilter from '../cmps/book/book-filter.cmp.js';
 import bookList from '../cmps/book/book-list.cmp.js';
+import bookAdd from '../cmps/book/book-add.cpm.js'
 
 export default {
     template: `
         <section class="book-app">
+            <book-add />
             <book-filter @doFilter="setFilter" />
             <book-list v-if="books" @remove="removeBook" @clicked="bookClicked" :books="booksToShow" />
             <!-- <book-details :book="currBook" v-else @back="backToList"  /> -->
@@ -63,6 +65,7 @@ export default {
     },
     components: {
         bookList,
-        bookFilter
+        bookFilter,
+        bookAdd
     }
 }
