@@ -5,6 +5,7 @@ export default {
                 <nav>
                   <router-link to='/' exact>Home</router-link>
                   <router-link to='/book' exact>Book App</router-link>
+                  <router-link to='/bookAdd' exact>Add Book</router-link>
                   <router-link to='/about' exact>About Us</router-link>
                 </nav>
             </section>
