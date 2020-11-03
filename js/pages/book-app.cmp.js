@@ -6,7 +6,7 @@ import bookAdd from '../cmps/book/book-add.cpm.js'
 export default {
     template: `
         <section class="book-app">
-            <book-add />
+            <book-add v-if="books" />
             <book-filter @doFilter="setFilter" />
             <book-list v-if="books" @remove="removeBook" @clicked="bookClicked" :books="booksToShow" />
             <!-- <book-details :book="currBook" v-else @back="backToList"  /> -->

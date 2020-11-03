@@ -1,5 +1,6 @@
 const STORAGE_KEY = 'booksDB'
 const gBooks = _createBooks();
+const gCurrencyCode = ['EUR', 'USD', 'ILS']
 import { utilService } from './util-service.js'
 
 function getBooksApi() {
@@ -718,8 +719,25 @@ function getBooksApi() {
     return booksApi.items
 }
 
-function addBook(book) {
-
+function add(book) {
+    var addedBook = {};
+    addedBook.id = book.id
+    addedBook.title = book.volumeInfo.title
+    addedBook.subtitle = book.volumeInfo.subtitle
+    addedBook.authors = book.volumeInfo.authors
+    addedBook.publishedDate = book.volumeInfo.publishedDate
+    addedBook.description = book.volumeInfo.description
+    addedBook.pageCount = book.volumeInfo.pageCount
+    addedBook.categories = book.volumeInfo.categories
+    addedBook.thumbnail = book.volumeInfo.imageLinks.thumbnail
+    addedBook.language = book.volumeInfo.language
+    addedBook.listPrice = {}
+    addedBook.listPrice.amount = (Math.floor(Math.random() * 150) + 1)
+    addedBook.listPrice.currencyCode = gCurrencyCode[Math.floor(Math.random() * 2)]
+    addedBook.listPrice.isOnSale = (Math.random() >= 0.5)
+    gBooks.push(addedBook)
+    utilService.storeToStorage(STORAGE_KEY, books)
+    return Promise.resolve(addedBook)
 }
 
 export const bookService = {
@@ -727,7 +745,8 @@ export const bookService = {
     getById,
     saveBookReview,
     removeReview,
-    getBooksApi
+    getBooksApi,
+    add
 }
 
 function getBooks() {

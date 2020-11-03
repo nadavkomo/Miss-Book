@@ -4,10 +4,10 @@ export default {
     template: `
     <section class="book-add">
         <ul>
-            <li v-for="book in books" :key="book.id">
+            <li v-for="currBook in books" :key="currBook.id">
                 <ul>
-                    <li class="book-name">{{book.volumeInfo.title}}</li>
-                    <li class="add-btn">+</li>
+                    <li class="book-name">{{currBook.volumeInfo.title}}</li>
+                    <li class="add-btn" @click="addBook(currBook)">+</li>
                 </ul>           
             </li>
         </ul>
@@ -16,6 +16,27 @@ export default {
     data() {
         return {
             books: null
+        }
+    },
+    methods: {
+        addBook(currBook) {
+            bookService.add(currBook)
+                // .then(() => {
+                //     const msg = {
+                //         txt: 'Car Saved Successffully',
+                //         type: 'success'
+                //     }
+                //     eventBus.$emit('show-msg', msg)
+                // })
+                // .catch(err => {
+                //     console.log('ERR:', err);
+                //     const msg = {
+                //         txt: 'Couldnt save your car',
+                //         type: 'danger'
+                //     }
+                //     eventBus.$emit('show-msg', msg)
+                // })
+
         }
     },
     created() {
