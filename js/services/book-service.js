@@ -3,6 +3,24 @@ const gBooks = _createBooks();
 const gCurrencyCode = ['EUR', 'USD', 'ILS']
 import { utilService } from './util-service.js'
 
+export const bookService = {
+    getBooks,
+    getById,
+    saveBookReview,
+    removeReview,
+    getBooksApi,
+    add,
+    getConsBookIdById,
+    getIdxById,
+    loadBooks
+}
+
+function loadBooks(searchBook) {
+    console.log(searchBook);
+    return axios.get(`https://www.googleapis.com/books/v1/volumes?printType=books&q=${searchBook}`)
+        .then(res => res.data)
+}
+
 function getBooksApi() {
     const booksApi = {
         "kind": "books#volumes",
@@ -740,16 +758,7 @@ function add(book) {
     return Promise.resolve(addedBook)
 }
 
-export const bookService = {
-    getBooks,
-    getById,
-    saveBookReview,
-    removeReview,
-    getBooksApi,
-    add,
-    getConsBookIdById,
-    getIdxById
-}
+
 
 function getConsBookIdById(id, diff) {
     var currIdx = getIdxById(id)

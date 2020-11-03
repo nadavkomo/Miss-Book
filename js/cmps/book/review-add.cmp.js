@@ -15,7 +15,7 @@ export default {
                     </label>
                     <span>Book name: {{book.title}}</span>
                     <label>
-                    <textarea type="text" maxLength="320" cols="70" rows="8" placeholder="Enter your review please" v-model="currReview" ></textarea>
+                    <textarea type="text" maxLength="220" cols="25" rows="5" placeholder="Enter your review please" v-model="currReview" ></textarea>
                     </label>
                     <section class="rate-section">
                         <a class="far fa-star" :class="{ 'fas fa-star checked': rating >= 1 }" @click="rateThis(1)"></a>

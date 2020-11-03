@@ -4,6 +4,7 @@ import bookList from '../cmps/book/book-list.cmp.js';
 import bookAdd from '../cmps/book/book-add.cpm.js'
 
 export default {
+    name: 'book-app',
     template: `
         <section class="book-app">
             <book-add v-if="books" />
