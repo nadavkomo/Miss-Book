@@ -5,8 +5,8 @@ import bookList from '../cmps/book/book-list.cmp.js';
 export default {
     template: `
         <section class="book-app">
-            <book-filter v-if="!bookDetailsShow" @doFilter="setFilter" />
-            <book-list v-if="!bookDetailsShow" @remove="removeBook" @clicked="bookClicked" :books="booksToShow" />
+            <book-filter @doFilter="setFilter" />
+            <book-list v-if="books" @remove="removeBook" @clicked="bookClicked" :books="booksToShow" />
             <!-- <book-details :book="currBook" v-else @back="backToList"  /> -->
 
         </section>
@@ -15,7 +15,7 @@ export default {
         return {
             filterBy: null,
             books: null,
-            bookDetailsShow: false,
+            // bookDetailsShow: false,
             currBook: ''
         }
     },
