@@ -24,6 +24,19 @@ html {
 body {
     text-align: center;
     background-color: rgb(209, 250, 114);
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    display: grid;
+    grid-template-rows: 90px 1fr 40px;
+    min-height: 100vh;
+}
+
+.main-container :nth-child(2) {
+    grid-row: 2;
+    height: 100%;
 }
 
 h1,
@@ -102,6 +115,23 @@ main {
     margin: 5px;
 }
 
+/* home-page */
+
+.home-page {
+    height: 100%;
+    background-image: url(https://wallpaperaccess.com/full/1209397.jpg);
+    opacity: 0.8;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-page .title {
+    opacity: 1;
+    font-size: 40px;
+    color: rgb(255, 145, 0);
+}
 
 /* about-page */
 
@@ -109,9 +139,32 @@ main {
     max-width: 522px;
 }
 
-
 /* book-add */
+.book-add form {
+    display: flex;
+    justify-content: center;
+}
 
+.book-add form>input {
+    text-align: center;
+    border: unset;
+    border-bottom: 1px solid lightblue ;
+    background-color: unset;
+    padding: 5px;
+}
+
+.book-add form>input:focus {
+    outline: 0;
+}
+
+.book-add form>button {
+    background-color: unset;
+    border: unset;
+}
+
+.book-add form>button:hover {
+    cursor: pointer;
+}
 .book-add ul {
     list-style: none;
 }
@@ -130,6 +183,8 @@ main {
 .book-list ul {
     list-style: none;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     margin-left: -20px;
 }
@@ -278,7 +333,6 @@ main {
 /* footer */
 
 footer {
-    height: 70px;
     max-width: 100%;
     background-color: lightblue;
     border-radius: 12px;

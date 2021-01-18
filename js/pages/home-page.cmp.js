@@ -1,7 +1,7 @@
 export default {
     template: `
     <section class="home-page">
-        <h2>Welcom to my book shop, the home of the best books</h2>
+        <h2 class="title">Welcom to my book shop, <br> the home of the best books</h2>
     </section>
     `,
 }

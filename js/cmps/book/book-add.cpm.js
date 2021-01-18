@@ -4,8 +4,11 @@ export default {
     name: 'book-add',
     template: `
     <section class="book-add">
-            <input type="text" name="search-book" v-model="searchBook" placeholder="Search book">
-            <button @click="search">search</button>
+            <h3>Add any book from you like from our list</h3>
+            <form @submit.prevent="search">
+                <input type="text" name="search-book" v-model="searchBook" placeholder="Search book">
+                <button>🔍</button>
+            </form>
         <ul>
             <li v-for="currBook in books" :key="currBook.id">
                 <span class="book-name">{{currBook.volumeInfo.title}}</span>

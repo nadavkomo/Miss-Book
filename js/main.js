@@ -7,7 +7,7 @@ const options = {
     el: '#app',
     router: myRouter,
     template: `
-        <section class="app">
+        <section class="app main-container">
             <header>
                 <header-cmp />
             </header>
