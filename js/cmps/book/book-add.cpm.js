@@ -4,7 +4,7 @@ export default {
     name: 'book-add',
     template: `
     <section class="book-add">
-            <h3>Add any book from you like from our list</h3>
+            <h3>Add any book you like from our list</h3>
             <form @submit.prevent="search">
                 <input type="text" name="search-book" v-model="searchBook" placeholder="Search book">
                 <button>🔍</button>
