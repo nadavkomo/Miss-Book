@@ -36,7 +36,6 @@ body {
 
 .main-container :nth-child(2) {
     grid-row: 2;
-    height: 100%;
 }
 
 h1,
