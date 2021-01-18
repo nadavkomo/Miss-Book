@@ -73,7 +73,6 @@ img {
 header {
     background-color: lightblue;
     padding: 10px;
-    border-radius: 12px
 }
 
 .logo {
@@ -110,9 +109,12 @@ nav .router-link-active {
 
 
 /* main */
+main>*:not(.home-page) {
+    margin: 0 10px;
+}
 
-main {
-    margin: 5px;
+main .full {
+    grid-column: 1/-1;
 }
 
 /* home-page */
@@ -140,21 +142,29 @@ main {
 }
 
 /* book-add */
+.book-add {
+    background-color: #c4f94afc;
+    border-radius: 5px;
+}
 .book-add form {
     display: flex;
     justify-content: center;
+    padding-bottom: 10px ;
 }
 
 .book-add form>input {
     text-align: center;
     border: unset;
-    border-bottom: 1px solid lightblue ;
+    border-bottom: 1px solid lightblue;
     background-color: unset;
     padding: 5px;
 }
 
 .book-add form>input:focus {
     outline: 0;
+}
+.book-add form>input::selection {
+    background-color: unset;
 }
 
 .book-add form>button {
@@ -165,6 +175,7 @@ main {
 .book-add form>button:hover {
     cursor: pointer;
 }
+
 .book-add ul {
     list-style: none;
 }
@@ -231,35 +242,73 @@ main {
 /* book-filter */
 
 .book-filter {
-    background-color: #ddd;
+    background-color: #c4f94afc;
     padding: 10px;
-    border-radius: 12px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+.book-filter input:focus {
+    outline: 0;
+}
+
+.book-filter input {
+    text-align: center;
+    border: unset;
+    border-bottom: 1px solid lightblue;
+    background-color: unset;
+    padding: 5px;
+}
+
+.book-filter>*:not(:first-child) {
+    margin: 5px;
+    font-size: 14px;
+}
+
+.extra-filters {
+    display: flex;
+    align-items: center;
+}
+
+.extra-filters input {
+    width: 50px;
+}
+
+.extra-filters>* {
+    margin: 5px;
+}
+
+/* .extra-filters label:not(:last-child) {
+    display: flex;
+    justify-content: space-between;
+} */
 
 
 /* book-details */
 
-.detailsClass {
+.details-class {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.detailsClass>* {
+.details-class>* {
     padding: 3px;
 }
 
-.detailsClass ul {
+.details-class ul {
     margin: 0
 }
 
-.detailsClass img {
-    height: 500px;
+.details-class img {
     width: 250px;
 }
 
-.detailsClass .publishedDate {
+.details-class .publishedDate {
     font-family: lora-bold, sans-serif;
     font-size: 20px;
 }
@@ -335,7 +384,6 @@ main {
 footer {
     max-width: 100%;
     background-color: lightblue;
-    border-radius: 12px;
 }
 
 .main-footer {

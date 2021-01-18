@@ -7,7 +7,7 @@ import bookReviews from '../cmps/book/book-reviews.cmp.js';
 export default {
     name: 'book-details',
     template: `
-        <section v-if="book" class="detailsClass">
+        <section v-if="book" class="details-class">
             <section class="nav-btn">
                 <button @click="toPrevBook">Prev</button>
                 <button @click="toNextBook">Next</button>

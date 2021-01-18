@@ -8,7 +8,7 @@ const options = {
     router: myRouter,
     template: `
         <section class="app main-container">
-            <header>
+            <header class="full">
                 <header-cmp />
             </header>
 
@@ -18,7 +18,7 @@ const options = {
 
             <user-msg />
 
-            <footer>
+            <footer class="full">
                 <footer-cmp />
             </footer>
 
