@@ -2,7 +2,7 @@ export default {
     name: 'about-team',
     template: `
     <section>
-        <h2>Our team is Awesome</h2>
+        <h3>Our team is Awesome</h3>
         <p>
             Our team consists of people with knowledge in the field of literature,<br />
             I am called Miss Books because I think books are of great importance to humanity.<br />

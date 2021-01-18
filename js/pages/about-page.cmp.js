@@ -2,7 +2,7 @@ export default {
     name: 'about-page',
     template: `
      <section class="about-page">
-        <h1>about us...</h1>
+        <h2>about us...</h2>
         <nav>
             <router-link to="/about/team">Our Team</router-link> | 
             <router-link to="/about/services">Our Services</router-link>
