@@ -121,7 +121,7 @@ main .full {
 
 .home-page {
     height: 100%;
-    background-image: url(/img/hero.jpg);
+    background-image: url(../img/hero.jpg);
     /* background-image: url(https://wallpaperaccess.com/full/1209397.jpg); */
     opacity: 0.8;
     background-position: center;
