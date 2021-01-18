@@ -10,9 +10,9 @@ export default {
                 <label> To price
                 <input type="number" v-model="filterBy.toPrice" @input="emitFilter" />
                 </label>
-                <label>
                 </section>
                 <section>
+                <label>
                 <input type="checkbox" v-model="filterBy.isActive" @input="emitFilter" /> 
                 Active Filter
                 </label>
